@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SalesAdvisorWidget } from './components/SalesAdvisorWidget';
-import { NeuralFeed } from './components/NeuralFeed';
 
 const ArrowRight = ({ size }: { size: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -9,6 +8,20 @@ const ArrowRight = ({ size }: { size: number }) => (
     <polyline points="12 5 19 12 12 19" />
   </svg>
 );
+
+const NeuralFeed = ({ nodeId }: { nodeId: string }) => {
+  return (
+    <div className="fixed bottom-6 right-6 z-50">
+      <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+          <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">Neural Feed</span>
+        </div>
+        <p className="text-xs text-gray-400">Sincronizando con nodo: {nodeId}</p>
+      </div>
+    </div>
+  );
+};
 
 function App() {
   const accentColor = "#f97316";

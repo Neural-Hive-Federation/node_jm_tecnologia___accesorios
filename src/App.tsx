@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SalesAdvisorWidget } from './components/SalesAdvisorWidget';
 
 const ArrowRight = ({ size }: { size: number }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -8,6 +7,69 @@ const ArrowRight = ({ size }: { size: number }) => (
     <polyline points="12 5 19 12 12 19" />
   </svg>
 );
+
+const SalesAdvisorWidget = ({ nodeName, adn }: { nodeName: string; adn: string }) => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isMinimized, setIsMinimized] = React.useState(false);
+
+  const toggleExpand = () => setIsExpanded(!isExpanded);
+  const toggleMinimize = () => setIsMinimized(!isMinimized);
+
+  const adnData = JSON.parse(JSON.parse(adn));
+
+  return (
+    <div className={`fixed bottom-6 left-6 z-50 transition-all duration-300 ${isMinimized ? 'w-16 h-16' : 'w-80'}`}>
+      <div className="bg-gray-900/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-2xl relative">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Asesor Neural</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleMinimize}
+              className="w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs"
+            >
+              {isMinimized ? '+' : '−'}
+            </button>
+          </div>
+        </div>
+
+        {!isMinimized && (
+          <>
+            <h3 className="text-sm font-bold text-white mb-1">{nodeName}</h3>
+            <p className="text-xs text-gray-400 mb-3">ADN: {adnData.rating}⭐ | {adnData.place_types}</p>
+
+            <div className="flex gap-1 mb-3">
+              <button className="px-3 py-1 bg-white/10 hover:bg-white/20 text-xs rounded-full transition-colors">Análisis</button>
+              <button className="px-3 py-1 bg-white/10 hover:bg-white/20 text-xs rounded-full transition-colors">Estrategia</button>
+              <button className="px-3 py-1 bg-white/10 hover:bg-white/20 text-xs rounded-full transition-colors">Competencia</button>
+            </div>
+
+            {isExpanded ? (
+              <div className="text-xs text-gray-300 leading-relaxed">
+                <p className="mb-2">{adnData.report.split('## 🧬 ADN DEL CLIENTE')[0]}</p>
+                <button
+                  onClick={toggleExpand}
+                  className="text-orange-500 hover:text-orange-400 text-xs font-bold flex items-center gap-1"
+                >
+                  Ver menos <ArrowRight size={10} />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={toggleExpand}
+                className="text-orange-500 hover:text-orange-400 text-xs font-bold flex items-center gap-1"
+              >
+                Ver más <ArrowRight size={10} />
+              </button>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const NeuralFeed = ({ nodeId }: { nodeId: string }) => {
   return (

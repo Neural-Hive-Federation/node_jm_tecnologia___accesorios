@@ -1,0 +1,44 @@
+[
+  {
+    "id": 6,
+    "image": "https://picsum.photos/seed/426/800/600",
+    "title": "Nuevos gadgets revolucionan tecnología",
+    "content": "La última innovación en accesorios para PC y celulares redefine la experiencia del usuario con funciones inteligentes y diseño futurista.",
+    "date": "HOY (JUNIO 2026)"
+  },
+  {
+    "id": 5,
+    "image": "https://picsum.photos/seed/292/800/600",
+    "title": "Revolución en Accesorios Tecnológicos",
+    "content": "Los últimos avances en gadgets para PC y celulares transforman nuestra experiencia digital. Nuevos accesorios inteligentes prometen mayor rendimiento y eficiencia.",
+    "date": "HOY (JUNIO 2026)"
+  },
+  {
+    "id": 4,
+    "image": "https://picsum.photos/seed/493/800/600",
+    "title": "Revolución en gadgets: IA integrada",
+    "content": "Los últimos dispositivos inteligentes incorporan IA avanzada, revolucionando experiencia usuario. Innovación que redefine tecnología móvil y accesorios PC.",
+    "date": "HOY (JUNIO 2026)"
+  },
+  {
+    "id": 3,
+    "image": "https://picsum.photos/seed/372/800/600",
+    "title": "Innovación en accesorios tecnológicos",
+    "content": "Nuevos gadgets revolucionan el mercado: auriculares con IA y cargadores inalámbricos de última generación transforman la experiencia digital.",
+    "date": "HOY (JUNIO 2026)"
+  },
+  {
+    "id": 1,
+    "image": "/images/tecnologia-premium.jpg",
+    "title": "Tecnología y Accesorios Premium",
+    "content": "JM Tecnología & Accesorios ofrece los últimos avances en tecnología y accesorios de alta gama en Cúcuta, Colombia. Desde dispositivos móviles hasta componentes de computación de última generación.",
+    "date": "ENERO 2024"
+  },
+  {
+    "id": 2,
+    "image": "/images/experiencia-cliente.jpg",
+    "title": "Experiencia de Cliente",
+    "content": "Con una calificación de 3 estrellas en Google basada en 120 reseñas, nos comprometemos a mejorar constantemente para ofrecer la mejor experiencia de compra en tecnología.",
+    "date": "ENERO 2024"
+  }
+]

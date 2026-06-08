@@ -7,22 +7,9 @@ function App() {
   const whatsappUrl = "https://wa.me/573105879234?text=Hola!%20Vengo%20desde%20su%20sitio%20web.";
   const googleMapsUrl = "https://www.google.com/maps/place/JM+Tecnolog%C3%ADa+%26+Accesorios/@7.9414434,-72.5018568,17z/data=!3m1!4b1!4m6!3m5!1s0x8e6b33a1a1a1a1a1:0x1234567890abcdef!8m2!3d7.9414434!4d-72.5018568!16s%2Fg%2F11c7f9x9y0";
 
-  const posts = [
-    {
-      id: 1,
-      image: '/images/tecnologia-premium.jpg',
-      title: 'Tecnología y Accesorios Premium',
-      content: 'JM Tecnología & Accesorios ofrece los últimos avances en tecnología y accesorios de alta gama en Cúcuta, Colombia. Desde dispositivos móviles hasta componentes de computación de última generación.',
-      date: 'ENERO 2024',
-    },
-    {
-      id: 2,
-      image: '/images/experiencia-cliente.jpg',
-      title: 'Experiencia de Cliente',
-      content: 'Con una calificación de 3 estrellas en Google basada en 120 reseñas, nos comprometemos a mejorar constantemente para ofrecer la mejor experiencia de compra en tecnología.',
-      date: 'ENERO 2024',
-    },
-  ];
+import postsData from './data/posts.json';
+
+  const posts = postsData;
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-orange-500/30">
